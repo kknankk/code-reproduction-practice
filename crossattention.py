@@ -23,14 +23,12 @@ class CalculateAttention(nn.Module):
         return attention
 
 class Multi_CrossAttention(nn.Module):
-    """
-    forward时,第一个参数用于计算query,第二个参数用于计算key和value
-    """
+
     def __init__(self,hidden_size,all_head_size,head_num):
         super().__init__()
-        self.hidden_size    = hidden_size       # 输入维度
-        self.all_head_size  = all_head_size     # 输出维度
-        self.num_heads      = head_num          # 注意头的数量
+        self.hidden_size    = hidden_size       # input_dim
+        self.all_head_size  = all_head_size     # output_dim
+        self.num_heads      = head_num         
         self.h_size         = all_head_size // head_num
 
         assert all_head_size % head_num == 0
@@ -52,9 +50,7 @@ class Multi_CrossAttention(nn.Module):
     # def forward(self,x,y,attention_mask):
     #change
     def forward(self,x,y):
-        """
-        cross-attention: x,y是两个模型的隐藏层,将x作为q的输入,y作为k和v的输入
-        """
+
         batch_size = x.size(0)
         # (B, S, D) -proj-> (B, S, D) -split-> (B, S, H, W) -trans-> (B, H, S, W)
         
