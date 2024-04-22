@@ -11,17 +11,14 @@ from transformers import BertModel, BertTokenizer
 
 class Positional_Encoding(nn.Module):
 	
-	# params: embed-->word embedding dim      pad_size-->max_sequence_lenght
-	# Input: x
-	# Output: x + position_encoder
 
         
     def __init__(self, embed, pad_size, dropout):
         super(Positional_Encoding, self).__init__()
         self.pe = torch.tensor([[pos / (10000.0 ** (i // 2 * 2.0 / embed)) for i in range(embed)] for pos in range(pad_size)])
         
-        self.pe[:, 0::2] = np.sin(self.pe[:, 0::2])   # 偶数sin
-        self.pe[:, 1::2] = np.cos(self.pe[:, 1::2])   # 奇数cos
+        self.pe[:, 0::2] = np.sin(self.pe[:, 0::2])   # even sin
+        self.pe[:, 1::2] = np.cos(self.pe[:, 1::2])   # odd cos
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, x):
@@ -60,15 +57,15 @@ class Multi_Head_Attention(nn.Module):
     def __init__(self, dim_model, num_head, dropout=0.0):
         super(Multi_Head_Attention, self).__init__()
         self.num_head = num_head
-        assert dim_model % num_head == 0    # head数必须能够整除隐层大小
-        self.dim_head = dim_model // self.num_head   # 按照head数量进行张量均分
-        self.fc_Q = nn.Linear(dim_model, num_head * self.dim_head)  # Q，通过Linear实现张量之间的乘法，等同手动定义参数W与之相乘
+        assert dim_model % num_head == 0    
+        self.dim_head = dim_model // self.num_head  
+        self.fc_Q = nn.Linear(dim_model, num_head * self.dim_head)  # Linear is equal to malmut
         self.fc_K = nn.Linear(dim_model, num_head * self.dim_head)
         self.fc_V = nn.Linear(dim_model, num_head * self.dim_head)
         self.attention = Scaled_Dot_Product_Attention() 
         self.fc = nn.Linear(num_head * self.dim_head, dim_model)
         self.dropout = nn.Dropout(dropout)
-        self.layer_norm = nn.LayerNorm(dim_model)   # 自带的LayerNorm方法
+        self.layer_norm = nn.LayerNorm(dim_model)   
 
     def forward(self, x):
         batch_size = x.size(0)
@@ -81,14 +78,14 @@ class Multi_Head_Attention(nn.Module):
         V = V.view(batch_size * self.num_head, -1, self.dim_head)
         # if mask:  # TODO
         #     mask = mask.repeat(self.num_head, 1, 1)  # TODO change this
-        scale = K.size(-1) ** -0.5  # 根号dk分之一，对应Scaled操作
-        context = self.attention(Q, K, V, scale) # Scaled_Dot_Product_Attention计算
-        context = context.view(batch_size, -1, self.dim_head * self.num_head) # reshape 回原来的形状
+        scale = K.size(-1) ** -0.5  # Scaled
+        context = self.attention(Q, K, V, scale) 
+        context = context.view(batch_size, -1, self.dim_head * self.num_head)
         # print(f'after attnention x expacted to be [128,pad,emdeddim] but got {context.shape}' )
-        out = self.fc(context)   # 全连接
+        out = self.fc(context)  
         out = self.dropout(out)
-        out = out + x      # 残差连接,ADD
-        out = self.layer_norm(out)  # 对应Norm
+        out = out + x      
+        out = self.layer_norm(out)  
         return out
     
 
@@ -103,9 +100,9 @@ class Position_wise_Feed_Forward(nn.Module):
     def forward(self, x):
         out = self.fc1(x)
         out = F.relu(out)
-        out = self.fc2(out)   # 两层全连接
+        out = self.fc2(out)   
         out = self.dropout(out)
-        out = out + x  # 残差连接
+        out = out + x  
         out = self.layer_norm(out)
         return out
 
@@ -128,17 +125,17 @@ class ConfigTrans(object):
     def __init__(self):
         self.model_name = 'Transformer'
         self.dropout = 0.5                              
-        self.num_classes = 20                     # 类别数
-        self.num_epochs = 100                # epoch数
-        self.batch_size = 64            # mini-batch大小
-        self.pad_size = 196                    # 每句话处理成的长度(短填长切)，这个根据自己的数据集而定
-        self.learning_rate = 0.001                    # 学习率
-        self.embed = 50       # 字向量维度
-        self.dim_model = 50      # 需要与embed一样
+        self.num_classes = 20
+        self.num_epochs = 100             
+        self.batch_size = 64           
+        self.pad_size = 196                    
+        self.learning_rate = 0.001                 
+        self.embed = 50       # dim=2
+        self.dim_model = 50      # same as embed
         self.hidden = 1024 
         self.last_hidden = 512
-        self.num_head = 5       # 多头注意力，注意需要整除
-        self.num_encoder = 2    # 使用两个Encoder，尝试6个encoder发现存在过拟合，毕竟数据集量比较少（10000左右），可能性能还是比不过LSTM
+        self.num_head = 5      
+        self.num_encoder = 2   
 config = ConfigTrans()
 
 
@@ -159,12 +156,12 @@ class Transformer(nn.Module):
 
         # self.encoders = nn.ModuleList([
         #     copy.deepcopy(self.encoder)
-        #     for _ in range(config.num_encoder)])   # 多次Encoder
+        #     for _ in range(config.num_encoder)])  
 
         self.encoders = nn.Sequential(*[
             Encoder(config.dim_model, config.num_head, 
                     config.hidden, config.dropout)
-            for _ in range(config.num_encoder)])   # 多次Encoder
+            for _ in range(config.num_encoder)])  
 
 
 
@@ -215,8 +212,8 @@ class Transformer(nn.Module):
             # print(f'text_feature size is {text_feature.shape}')
 
             # print(f'text_feature size is {text_feature.shape}')
-        # out = out.view(out.size(0), -1)  # 将三维张量reshape成二维，然后直接通过全连接层将高维数据映射为classes
-        # # out = torch.mean(out, 1)    # 也可用池化来做，但是效果并不是很好
+        # out = out.view(out.size(0), -1)  #
+        # # out = torch.mean(out, 1)   
         # out = self.fc1(out)
         return text_feature,text_clstoken
 
