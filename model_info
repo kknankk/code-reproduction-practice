@@ -1,0 +1,698 @@
+ (flair_encoder): Encoder(
+    (e1_c1): Conv3d(1, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+    (e1_c2): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e1_c3): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c1): general_conv3d_prenorm(
+      (conv): Conv3d(8, 16, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c2): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c3): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c1): general_conv3d_prenorm(
+      (conv): Conv3d(16, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c2): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c3): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c1): general_conv3d_prenorm(
+      (conv): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c2): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c3): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c1): general_conv3d_prenorm(
+      (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c2): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c3): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+  )
+  (t1ce_encoder): Encoder(
+    (e1_c1): Conv3d(1, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+    (e1_c2): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e1_c3): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c1): general_conv3d_prenorm(
+      (conv): Conv3d(8, 16, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c2): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c3): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c1): general_conv3d_prenorm(
+      (conv): Conv3d(16, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c2): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c3): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c1): general_conv3d_prenorm(
+      (conv): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c2): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c3): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c1): general_conv3d_prenorm(
+      (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c2): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c3): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+  )
+  (t1_encoder): Encoder(
+    (e1_c1): Conv3d(1, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+    (e1_c2): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e1_c3): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c1): general_conv3d_prenorm(
+      (conv): Conv3d(8, 16, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c2): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c3): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c1): general_conv3d_prenorm(
+      (conv): Conv3d(16, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c2): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c3): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c1): general_conv3d_prenorm(
+      (conv): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c2): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c3): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c1): general_conv3d_prenorm(
+      (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c2): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c3): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+  )
+  (t2_encoder): Encoder(
+    (e1_c1): Conv3d(1, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+    (e1_c2): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e1_c3): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c1): general_conv3d_prenorm(
+      (conv): Conv3d(8, 16, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c2): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e2_c3): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c1): general_conv3d_prenorm(
+      (conv): Conv3d(16, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c2): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e3_c3): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c1): general_conv3d_prenorm(
+      (conv): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c2): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e4_c3): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c1): general_conv3d_prenorm(
+      (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c2): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (e5_c3): general_conv3d_prenorm(
+      (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+  )
+  (flair_encode_conv): Conv3d(128, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (t1ce_encode_conv): Conv3d(128, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (t1_encode_conv): Conv3d(128, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (t2_encode_conv): Conv3d(128, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (flair_decode_conv): Conv3d(512, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (t1ce_decode_conv): Conv3d(512, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (t1_decode_conv): Conv3d(512, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (t2_decode_conv): Conv3d(512, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (flair_transformer): Transformer(
+    (cross_attention_list): ModuleList(
+      (0): Residual(
+        (fn): PreNormDrop(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (fn): SelfAttention(
+            (qkv): Linear(in_features=512, out_features=1536, bias=False)
+            (attn_drop): Dropout(p=0.1, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (cross_ffn_list): ModuleList(
+      (0): Residual(
+        (fn): PreNorm(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (fn): FeedForward(
+            (net): Sequential(
+              (0): Linear(in_features=512, out_features=4096, bias=True)
+              (1): GELU()
+              (2): Dropout(p=0.1, inplace=False)
+              (3): Linear(in_features=4096, out_features=512, bias=True)
+              (4): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+  )
+  (t1ce_transformer): Transformer(
+    (cross_attention_list): ModuleList(
+      (0): Residual(
+        (fn): PreNormDrop(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (fn): SelfAttention(
+            (qkv): Linear(in_features=512, out_features=1536, bias=False)
+            (attn_drop): Dropout(p=0.1, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (cross_ffn_list): ModuleList(
+      (0): Residual(
+        (fn): PreNorm(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (fn): FeedForward(
+            (net): Sequential(
+              (0): Linear(in_features=512, out_features=4096, bias=True)
+              (1): GELU()
+              (2): Dropout(p=0.1, inplace=False)
+              (3): Linear(in_features=4096, out_features=512, bias=True)
+              (4): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+  )
+  (t1_transformer): Transformer(
+    (cross_attention_list): ModuleList(
+      (0): Residual(
+        (fn): PreNormDrop(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (fn): SelfAttention(
+            (qkv): Linear(in_features=512, out_features=1536, bias=False)
+            (attn_drop): Dropout(p=0.1, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (cross_ffn_list): ModuleList(
+      (0): Residual(
+        (fn): PreNorm(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (fn): FeedForward(
+            (net): Sequential(
+              (0): Linear(in_features=512, out_features=4096, bias=True)
+              (1): GELU()
+              (2): Dropout(p=0.1, inplace=False)
+              (3): Linear(in_features=4096, out_features=512, bias=True)
+              (4): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+  )
+  (t2_transformer): Transformer(
+    (cross_attention_list): ModuleList(
+      (0): Residual(
+        (fn): PreNormDrop(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (fn): SelfAttention(
+            (qkv): Linear(in_features=512, out_features=1536, bias=False)
+            (attn_drop): Dropout(p=0.1, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (cross_ffn_list): ModuleList(
+      (0): Residual(
+        (fn): PreNorm(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (fn): FeedForward(
+            (net): Sequential(
+              (0): Linear(in_features=512, out_features=4096, bias=True)
+              (1): GELU()
+              (2): Dropout(p=0.1, inplace=False)
+              (3): Linear(in_features=4096, out_features=512, bias=True)
+              (4): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+  )
+  (multimodal_transformer): Transformer(
+    (cross_attention_list): ModuleList(
+      (0): Residual(
+        (fn): PreNormDrop(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (fn): SelfAttention(
+            (qkv): Linear(in_features=512, out_features=1536, bias=False)
+            (attn_drop): Dropout(p=0.1, inplace=False)
+            (proj): Linear(in_features=512, out_features=512, bias=True)
+            (proj_drop): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (cross_ffn_list): ModuleList(
+      (0): Residual(
+        (fn): PreNorm(
+          (norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (fn): FeedForward(
+            (net): Sequential(
+              (0): Linear(in_features=512, out_features=4096, bias=True)
+              (1): GELU()
+              (2): Dropout(p=0.1, inplace=False)
+              (3): Linear(in_features=4096, out_features=512, bias=True)
+              (4): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+  )
+  (multimodal_decode_conv): Conv3d(2048, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  (masker): MaskModal()
+  (decoder_fuse): Decoder_fuse(
+    (d4_c1): general_conv3d_prenorm(
+      (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d4_c2): general_conv3d_prenorm(
+      (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d4_out): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d3_c1): general_conv3d_prenorm(
+      (conv): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d3_c2): general_conv3d_prenorm(
+      (conv): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d3_out): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d2_c1): general_conv3d_prenorm(
+      (conv): Conv3d(32, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d2_c2): general_conv3d_prenorm(
+      (conv): Conv3d(32, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d2_out): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d1_c1): general_conv3d_prenorm(
+      (conv): Conv3d(16, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d1_c2): general_conv3d_prenorm(
+      (conv): Conv3d(16, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d1_out): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (seg_d4): Conv3d(128, 4, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    (seg_d3): Conv3d(64, 4, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    (seg_d2): Conv3d(32, 4, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    (seg_d1): Conv3d(16, 4, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    (seg_layer): Conv3d(8, 4, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    (softmax): Softmax(dim=1)
+    (up2): Upsample(scale_factor=2.0, mode='trilinear')
+    (up4): Upsample(scale_factor=4.0, mode='trilinear')
+    (up8): Upsample(scale_factor=8.0, mode='trilinear')
+    (up16): Upsample(scale_factor=16.0, mode='trilinear')
+    (RFM5): fusion_prenorm(
+      (fusion_layer): Sequential(
+        (0): general_conv3d_prenorm(
+          (conv): Conv3d(512, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (1): general_conv3d_prenorm(
+          (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (2): general_conv3d_prenorm(
+          (conv): Conv3d(128, 128, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (RFM4): fusion_prenorm(
+      (fusion_layer): Sequential(
+        (0): general_conv3d_prenorm(
+          (conv): Conv3d(256, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (1): general_conv3d_prenorm(
+          (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (2): general_conv3d_prenorm(
+          (conv): Conv3d(64, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (RFM3): fusion_prenorm(
+      (fusion_layer): Sequential(
+        (0): general_conv3d_prenorm(
+          (conv): Conv3d(128, 32, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (1): general_conv3d_prenorm(
+          (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (2): general_conv3d_prenorm(
+          (conv): Conv3d(32, 32, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (RFM2): fusion_prenorm(
+      (fusion_layer): Sequential(
+        (0): general_conv3d_prenorm(
+          (conv): Conv3d(64, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (1): general_conv3d_prenorm(
+          (conv): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (2): general_conv3d_prenorm(
+          (conv): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (RFM1): fusion_prenorm(
+      (fusion_layer): Sequential(
+        (0): general_conv3d_prenorm(
+          (conv): Conv3d(32, 8, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (1): general_conv3d_prenorm(
+          (conv): Conv3d(8, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+        (2): general_conv3d_prenorm(
+          (conv): Conv3d(8, 8, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+          (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+  )
+  (decoder_sep): Decoder_sep(
+    (d4): Upsample(scale_factor=2.0, mode='trilinear')
+    (d4_c1): general_conv3d_prenorm(
+      (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d4_c2): general_conv3d_prenorm(
+      (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d4_out): general_conv3d_prenorm(
+      (conv): Conv3d(64, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d3): Upsample(scale_factor=2.0, mode='trilinear')
+    (d3_c1): general_conv3d_prenorm(
+      (conv): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d3_c2): general_conv3d_prenorm(
+      (conv): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d3_out): general_conv3d_prenorm(
+      (conv): Conv3d(32, 32, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d2): Upsample(scale_factor=2.0, mode='trilinear')
+    (d2_c1): general_conv3d_prenorm(
+      (conv): Conv3d(32, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d2_c2): general_conv3d_prenorm(
+      (conv): Conv3d(32, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d2_out): general_conv3d_prenorm(
+      (conv): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(16, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d1): Upsample(scale_factor=2.0, mode='trilinear')
+    (d1_c1): general_conv3d_prenorm(
+      (conv): Conv3d(16, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d1_c2): general_conv3d_prenorm(
+      (conv): Conv3d(16, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (d1_out): general_conv3d_prenorm(
+      (conv): Conv3d(8, 8, kernel_size=(1, 1, 1), stride=(1, 1, 1), padding_mode=reflect)
+      (norm): InstanceNorm3d(8, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (activation): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (seg_layer): Conv3d(8, 4, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+    (softmax): Softmax(dim=1)
+  )
+)
